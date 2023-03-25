@@ -6,7 +6,7 @@
 #    By: ahamrad <ahamrad@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 22:39:35 by ahamrad           #+#    #+#              #
-#    Updated: 2023/03/21 14:58:24 by ahamrad          ###   ########.fr        #
+#    Updated: 2023/03/24 17:35:33 by ahamrad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ SRC = utils.c
 SRC_S = server.c
 SRC_C = client.c
 
-OBJ = $(SRC:.c=.o)
-OBJ_S = $(SRC_S:.c=.o)
-OBJ_C = $(SRC_C:.c=.o)
+OBJ = utils.o
+OBJ_S = server.o
+OBJ_C = client.o
 
 all: $(NAME_C) $(NAME_S)
 

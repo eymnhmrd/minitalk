@@ -6,7 +6,7 @@
 /*   By: ahamrad <ahamrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:42:59 by ahamrad           #+#    #+#             */
-/*   Updated: 2023/03/24 00:40:35 by ahamrad          ###   ########.fr       */
+/*   Updated: 2023/03/24 23:32:14 by ahamrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_send_char(int pid, char c)
 				ft_kill_error();
 		}
 		i++;
-		usleep(1200);
+		usleep(1000);
 		c = c >> 1;
 	}
 }
@@ -66,5 +66,5 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	ft_send_char(server_pid, '\n');
-	return (0);
+	exit(EXIT_SUCCESS);
 }
