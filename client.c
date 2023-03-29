@@ -6,7 +6,7 @@
 /*   By: ahamrad <ahamrad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:42:59 by ahamrad           #+#    #+#             */
-/*   Updated: 2023/03/24 23:32:14 by ahamrad          ###   ########.fr       */
+/*   Updated: 2023/03/28 21:59:26 by ahamrad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_send_char(int pid, char c)
 	i = 0;
 	while (i < 8)
 	{
+		usleep(1000);
 		if (c & 1)
 		{
 			if (kill(pid, SIGUSR2) == -1)
@@ -36,7 +37,6 @@ void	ft_send_char(int pid, char c)
 				ft_kill_error();
 		}
 		i++;
-		usleep(1000);
 		c = c >> 1;
 	}
 }
@@ -65,6 +65,5 @@ int	main(int argc, char *argv[])
 		ft_send_char(server_pid, str[i]);
 		i++;
 	}
-	ft_send_char(server_pid, '\n');
 	exit(EXIT_SUCCESS);
 }
